@@ -1,9 +1,9 @@
-// @ts-expect-error - to review how it's implemented in ExpensiMark
-// eslint-disable-next-line import/no-unresolved
-import {ExpensiMark} from 'expensify-common/lib/ExpensiMark';
 import _ from 'underscore';
+// @ts-expect-error - to review how it's implemented in ExpensiMark
+// eslint-disable-next-line
+import {ExpensiMark} from './ExpensiMark.js';
 
-type MarkdownType = 'bold' | 'italic' | 'strikethrough' | 'mention-here' | 'mention-user' | 'link' | 'code' | 'pre' | 'blockquote' | 'h1' | 'syntax';
+type MarkdownType = 'bold' | 'italic' | 'strikethrough' | 'mention-here' | 'mention-user' | 'link' | 'code' | 'pre' | 'blockquote' | 'h1' | 'h2' | 'h3' | 'h4' | 'h5' | 'h6' | 'syntax';
 type Range = {
   type: MarkdownType;
   start: number;
@@ -135,6 +135,21 @@ function parseTreeToTextAndRanges(tree: StackItem): [string, Range[]] {
       } else if (node.tag === '<h1>') {
         appendSyntax('# ');
         addChildrenWithStyle(node, 'h1');
+      } else if (node.tag === '<h2>') {
+        appendSyntax('## ');
+        addChildrenWithStyle(node, 'h2');
+      } else if (node.tag === '<h3>') {
+        appendSyntax('### ');
+        addChildrenWithStyle(node, 'h3');
+      } else if (node.tag === '<h4>') {
+        appendSyntax('#### ');
+        addChildrenWithStyle(node, 'h4');
+      } else if (node.tag === '<h5>') {
+        appendSyntax('##### ');
+        addChildrenWithStyle(node, 'h5');
+      } else if (node.tag === '<h6>') {
+        appendSyntax('###### ');
+        addChildrenWithStyle(node, 'h6');
       } else if (node.tag.startsWith('<pre')) {
         const content = _.unescape(node.tag.match(/data-code-raw="([^"]*)"/)![1]!); // always present
 
@@ -171,6 +186,11 @@ function getTagPriority(tag: string) {
     case 'blockquote':
       return 2;
     case 'h1':
+    case 'h2':
+    case 'h3':
+    case 'h4':
+    case 'h5':
+    case 'h6':
       return 1;
     default:
       return 0;
