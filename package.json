@@ -104,7 +104,8 @@
     "react-native": "*"
   },
   "workspaces": [
-    "example"
+    "example",
+    "WebExample"
   ],
   "packageManager": "yarn@3.6.1",
   "engines": {
