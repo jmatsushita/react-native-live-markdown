@@ -1,0 +1,1 @@
+{"version":3,"file":"cursorUtils.d.ts","sourceRoot":"","sources":["../../../../src/web/cursorUtils.ts"],"names":[],"mappings":"AAsCA,iBAAS,iBAAiB,CAAC,MAAM,EAAE,WAAW,EAAE,cAAc,EAAE,MAAM,EAAE,cAAc,UAAQ,QAQ7F;AAED,iBAAS,eAAe,CAAC,MAAM,EAAE,WAAW,QAS3C;AAiBD,iBAAS,wBAAwB,CAAC,MAAM,EAAE,WAAW;;;EAUpD;AAED,OAAO,EAAC,wBAAwB,EAAE,eAAe,EAAE,iBAAiB,EAAC,CAAC"}
