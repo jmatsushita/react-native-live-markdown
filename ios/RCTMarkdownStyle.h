@@ -9,6 +9,17 @@ NS_ASSUME_NONNULL_BEGIN
 @property (nonatomic) UIColor *syntaxColor;
 @property (nonatomic) UIColor *linkColor;
 @property (nonatomic) CGFloat h1FontSize;
+@property (nonatomic) UIColor *h1Color;
+@property (nonatomic) CGFloat h2FontSize;
+@property (nonatomic) UIColor *h2Color;
+@property (nonatomic) CGFloat h3FontSize;
+@property (nonatomic) UIColor *h3Color;
+@property (nonatomic) CGFloat h4FontSize;
+@property (nonatomic) UIColor *h4Color;
+@property (nonatomic) CGFloat h5FontSize;
+@property (nonatomic) UIColor *h5Color;
+@property (nonatomic) CGFloat h6FontSize;
+@property (nonatomic) UIColor *h6Color;
 @property (nonatomic) UIColor *blockquoteBorderColor;
 @property (nonatomic) CGFloat blockquoteBorderWidth;
 @property (nonatomic) CGFloat blockquoteMarginLeft;

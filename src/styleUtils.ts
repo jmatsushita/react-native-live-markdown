@@ -22,6 +22,27 @@ function makeDefaultMarkdownStyle(): MarkdownStyle {
     },
     h1: {
       fontSize: 25,
+      color: 'black',
+    },
+    h2: {
+      fontSize: 22,
+      color: 'black',
+    },
+    h3: {
+      fontSize: 20,
+      color: 'black',
+    },
+    h4: {
+      fontSize: 18,
+      color: 'black',
+    },
+    h5: {
+      fontSize: 16,
+      color: 'black',
+    },
+    h6: {
+      fontSize: 14,
+      color: 'black',
     },
     blockquote: {
       borderColor: 'gray',

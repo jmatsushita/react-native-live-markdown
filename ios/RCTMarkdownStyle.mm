@@ -18,6 +18,11 @@
     _linkColor = RCTUIColorFromSharedColor(style.link.color);
 
     _h1FontSize = style.h1.fontSize;
+    _h2FontSize = style.h2.fontSize;
+    _h3FontSize = style.h3.fontSize;
+    _h4FontSize = style.h4.fontSize;
+    _h5FontSize = style.h5.fontSize;
+    _h6FontSize = style.h6.fontSize;
 
     _blockquoteBorderColor = RCTUIColorFromSharedColor(style.blockquote.borderColor);
     _blockquoteBorderWidth = style.blockquote.borderWidth;
@@ -52,6 +57,17 @@
     _linkColor = [RCTConvert UIColor:json[@"link"][@"color"]];
 
     _h1FontSize = [RCTConvert CGFloat:json[@"h1"][@"fontSize"]];
+    _h1Color = [RCTConvert UIColor:json[@"h1"][@"color"]];
+    _h2FontSize = [RCTConvert CGFloat:json[@"h2"][@"fontSize"]];
+    _h2Color = [RCTConvert UIColor:json[@"h2"][@"color"]];
+    _h3FontSize = [RCTConvert CGFloat:json[@"h3"][@"fontSize"]];
+    _h3Color = [RCTConvert UIColor:json[@"h3"][@"color"]];
+    _h4FontSize = [RCTConvert CGFloat:json[@"h4"][@"fontSize"]];
+    _h4Color = [RCTConvert UIColor:json[@"h4"][@"color"]];
+    _h5FontSize = [RCTConvert CGFloat:json[@"h5"][@"fontSize"]];
+    _h5Color = [RCTConvert UIColor:json[@"h5"][@"color"]];
+    _h6FontSize = [RCTConvert CGFloat:json[@"h6"][@"fontSize"]];
+    _h6Color = [RCTConvert UIColor:json[@"h6"][@"color"]];
 
     _blockquoteBorderColor = [RCTConvert UIColor:json[@"blockquote"][@"borderColor"]];
     _blockquoteBorderWidth = [RCTConvert CGFloat:json[@"blockquote"][@"borderWidth"]];

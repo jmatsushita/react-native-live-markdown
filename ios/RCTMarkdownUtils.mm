@@ -82,6 +82,41 @@
                                              style:nil
                                            variant:nil
                                    scaleMultiplier:0];
+      } else if ([type isEqualToString:@"h2"]) {
+        font = [RCTFont updateFont:font withFamily:nil
+                                              size:[NSNumber numberWithFloat:_markdownStyle.h2FontSize]
+                                            weight:@"bold"
+                                             style:nil
+                                           variant:nil
+                                   scaleMultiplier:0];
+      } else if ([type isEqualToString:@"h3"]) {
+        font = [RCTFont updateFont:font withFamily:nil
+                                              size:[NSNumber numberWithFloat:_markdownStyle.h3FontSize]
+                                            weight:@"bold"
+                                             style:nil
+                                           variant:nil
+                                   scaleMultiplier:0];
+      } else if ([type isEqualToString:@"h4"]) {
+        font = [RCTFont updateFont:font withFamily:nil
+                                              size:[NSNumber numberWithFloat:_markdownStyle.h4FontSize]
+                                            weight:@"bold"
+                                             style:nil
+                                           variant:nil
+                                   scaleMultiplier:0];
+      } else if ([type isEqualToString:@"h5"]) {
+        font = [RCTFont updateFont:font withFamily:nil
+                                              size:[NSNumber numberWithFloat:_markdownStyle.h5FontSize]
+                                            weight:@"bold"
+                                             style:nil
+                                           variant:nil
+                                   scaleMultiplier:0];
+      } else if ([type isEqualToString:@"h6"]) {
+        font = [RCTFont updateFont:font withFamily:nil
+                                              size:[NSNumber numberWithFloat:_markdownStyle.h6FontSize]
+                                            weight:@"bold"
+                                             style:nil
+                                           variant:nil
+                                   scaleMultiplier:0];
       }
       [attributedString addAttribute:NSFontAttributeName value:font range:range];
     }
@@ -118,11 +153,13 @@
       NSRange rangeForBackground = [inputString characterAtIndex:range.location] == '\n' ? NSMakeRange(range.location + 1, range.length - 1) : range;
       [attributedString addAttribute:NSBackgroundColorAttributeName value:_markdownStyle.preBackgroundColor range:rangeForBackground];
       // TODO: pass background color and ranges to layout manager
-    } else if ([type isEqualToString:@"h1"]) {
+    } else if ([type isEqualToString:@"h1"] || [type isEqualToString:@"h2"] || [type isEqualToString:@"h3"] || [type isEqualToString:@"h4"] || [type isEqualToString:@"h5"] || [type isEqualToString:@"h6"]) {
       NSMutableParagraphStyle *paragraphStyle = [NSMutableParagraphStyle new];
       NSRange rangeWithHashAndSpace = NSMakeRange(range.location - 2, range.length + 2); // we also need to include prepending "# "
       [attributedString addAttribute:NSParagraphStyleAttributeName value:paragraphStyle range:rangeWithHashAndSpace];
-    }
+      [attributedString addAttribute:NSForegroundColorAttributeName value:_markdownStyle.h1Color range:range];
+
+    } 
   }];
 
   [attributedString endEditing];
